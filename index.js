@@ -13,7 +13,10 @@ const DB = process.env.DATABASE
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
-
+const allowedOrigins = [
+    'http://localhost:3000', 
+    process.env.FRONTEND_URL  
+];
 // app.use(cors({
 //     origin: 'http://localhost:3000'
 // }));
